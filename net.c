@@ -102,7 +102,7 @@ net_input_handler(uint16_t type, const uint8_t *data, size_t len, struct net_dev
 
 int net_run(void)
 {
-    struct net_divice *dev;
+    struct net_device *dev;
 
     debugf("open all devices...");
     for (dev = devices; dev; dev = dev->next) {
