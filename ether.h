@@ -10,7 +10,7 @@
 #define ETHER_ADDR_LEN 6
 #define ETHER_ADDR_STR_LEN 18 /* "xx:xx:xx:xx:xx:xx\0" */
 
-#define ETHER_HDR_LEN 14
+#define ETHER_HDR_SIZE 14
 #define ETHER_FRAME_SIZE_MIN   60 /* without FCS */
 #define ETHER_FRAME_SIZE_MAX 1514 /* without FCS */
 #define ETHER_PAYLOAD_SIZE_MIN (ETHER_FRAME_SIZE_MIN - ETHER_HDR_SIZE)
