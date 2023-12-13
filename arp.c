@@ -176,13 +176,6 @@ arp_cache_insert(ip_addr_t pa, const uint8_t *ha)
     gettimeofday(&cache->timestamp, NULL);
     
     debugf("INSERT: pa=%s, ha=%s", ip_addr_ntop(pa, addr1, sizeof(addr1)), ether_addr_ntop(ha, addr2, sizeof(addr2)));
-    // printf("#######################");
-    // struct arp_cache *t;
-    // for (t = caches; t < tailof(caches); t++) {
-    //     debugf("pa=%s, ha=%s", ip_addr_ntop(t->pa, addr1, sizeof(addr1)), ether_addr_ntop(t->ha, addr2, sizeof(addr2)));
-    // }
-    // printf("#######################");
-
     return cache;
 }
 
@@ -307,7 +300,6 @@ arp_resolve(struct net_iface * iface, ip_addr_t pa, uint8_t *ha)
         cache->pa = pa;
         gettimeofday(&cache->timestamp, NULL);
         mutex_unlock(&mutex);
-        // return ARP_RESOLVE_ERROR;
         arp_request(iface, pa);
         return ARP_RESOLVE_INCOMPLETE;
     }
