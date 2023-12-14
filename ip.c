@@ -309,7 +309,7 @@ ip_protocol_register(uint8_t type, void (*handler)(const uint8_t *data, size_t l
     }
     entry->type = type;
     entry->handler = handler;
-    entry->next = entry;
+    entry->next = protocols;
     protocols = entry;
 
     infof("registered, type=%u", entry->type);
