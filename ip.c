@@ -135,6 +135,7 @@ ip_route_add(ip_addr_t network, ip_addr_t netmask, ip_addr_t nexthop, struct ip_
     route->nexthop = nexthop;
     route->iface = iface;
     route->next = routes;
+    routes = route;
 
     infof("route added: network=%s, netmask=%s, nexthop=%s, iface=%s dev=%s",
             ip_addr_ntop(route->network, addr1, sizeof(addr1)),
