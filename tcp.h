@@ -13,6 +13,6 @@ tcp_close(int id);
 extern ssize_t
 tcp_send(int id, uint8_t *data, size_t len);
 extern ssize_t
-tcp_recieve(int id, uint8_t *buf, size_t size);
+tcp_receive(int id, uint8_t *buf, size_t size);
 
 #endif
